@@ -8,6 +8,10 @@ This is an automated data collection script, it contains:
 2 - A python script to parse the data file
 3 - A skeleton of the project where you should just drop your patterns.c and patterns
 
+it took lots of time to develop and be "presentable" for others to use, so if you used this tool in some way, please refer it in the report, we are g28, composed by:
+
+Nuno Morais, Marta Carlos, Luís Correia
+
 # REQUIREMENTS: 
 
 CilkPlus
@@ -25,6 +29,8 @@ ssh into a computer with the requirements specified above,
 if the computer does not have python (like the LAB server)
 there will be a note in the end
 
+# INSTRUCTIONS STEP-BY-STEP: 
+
 **1 - Change to home dir and clone the tool:**
 
   $ cd ~/ && git clone https://github.com/nm-morais/cp_pattern_data_collection.git
@@ -33,10 +39,15 @@ there will be a note in the end
 
   $ cd cp_pattern_data_collection
   
-**2 - Copy your implementation of patterns.c into the src directory (cp_pattern_data_collection/src)**
+**2 - Copy your implementation of patterns.c into the src directory (cp_pattern_data_collection/src) and compile it**
 
   For this you can use scp:
   $ scp  my_local_path_to_file/patterns.c  gXX@LAB_IP:~/cp_pattern_data_collection/src
+  
+  $ cd src
+  
+  $ make
+  
   
 **3 - run the bash script  which calls the entire chain of tools (READ CAREFULLY):**
 
@@ -86,5 +97,19 @@ there will be a note in the end
     $ python3 parser.py -1 -1 
     and say N to the graph question
 
+**5 - Results:**
 
+  in your data folder **(cp_pattern_data_collection/data)** there should be two folders: **csv** and **graphs**,
+  if you chose to make the graphs, there will be files in the graphs folder, they are self-explanatory
+  In the CSV folder, there will be as many CSV files as the number of patterns you tested, the data in them follows the following structure:
+  
+    1 - paralel runtime
+    2 - sequential runtime
+    3 - source size
+    4 - number of workers
+    5 - speedup
+    6 - efficiency
+  
+  
+  
 

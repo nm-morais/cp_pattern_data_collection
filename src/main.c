@@ -94,6 +94,7 @@ int main(int argc, char* argv[]) {
         average_par = 0.0;
 
     }
+    free(src);
 
     return 0;
 }

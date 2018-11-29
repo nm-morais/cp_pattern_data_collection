@@ -44,12 +44,16 @@ there will be a note in the end
   READ CAREFULLY:
   
   the arguments are:
-    USAGE: [MAX SOURCE SIZE] [INCREMENT] [MAX WORKERS] [TIMES TO AVERAGE]
-    **[MAX SOURCE SIZE]** : is the max size for the src array
-    **[INCREMENT]** :  is by HOW MUCH you want to increment the size of your tests until INCREMENT==MAX SOURCE SIZE
-      e.g. source size of 10 and increment of 1 leads to 10 tests
-    **[MAX WORKERS]** : the number of threads for cilk to test up to
-    **[TIMES TO AVERAGE]** : the number of times to run the test and get an average of
+  **USAGE: start_tests.sh [MAX SOURCE SIZE] [INCREMENT] [MAX WORKERS] [TIMES TO AVERAGE]
+
+  **[MAX SOURCE SIZE]** : is the max size for the src array
+
+  **[INCREMENT]** :  is by HOW MUCH you want to increment the size of your tests until INCREMENT==MAX SOURCE SIZE
+    e.g. source size of 10 and increment of 1 leads to 10 tests
+
+  **[MAX WORKERS]** : the number of threads for cilk to test up to
+
+  **[TIMES TO AVERAGE]** : the number of times to run the test and get an average of
     
    IF you do max src = 10 and increment = 1 and max workers = 4 and times to average = 5, you will be making 10 * 4 * 5 = 200 tests!!!!
   

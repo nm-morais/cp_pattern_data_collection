@@ -37,13 +37,13 @@ def main():
 				split = line.split("	")
 				functionName =  split[0][4:-4]
 				#print(functionName)
-				seq_runtime = int(split[1])
+				par_runtime = int(split[1])
 				#print("sequential runtime: " + str(runtime_seq))
 
 				#fetch paralel runtime
 				line = next(f)
 				split = line.split("	")
-				par_runtime = int(split[1])
+				seq_runtime = int(split[1])
 				#print("paralel runtime: " + str(runtime_par))
 
 				#fetch speedup

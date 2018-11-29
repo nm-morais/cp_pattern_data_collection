@@ -8,16 +8,16 @@ This is an automated data collection script, it contains:
 2 - A python script to parse the data file
 3 - A skeleton of the project where you should just drop your patterns.c and patterns
 
-## REQUIREMENTS
+# REQUIREMENTS: 
 
-# CilkPlus
-# Python3 + matplotlib
-# Bash
-# Around 30 MB of space for the graphs (depends on the size of the tests)
+CilkPlus
+Python3 + matplotlib
+Bash
+Around 30 MB of space for the graphs (depends on the size of the tests)
 
-## INSTRUCTIONS
+# INSTRUCTIONS
 
-## PRE: 
+# PRE: 
 ssh into a computer with the requirements specified above, 
 if the computer does not have python (like the LAB server)
 there will be a note in the end

@@ -2,8 +2,7 @@
 #include <string.h>
 #include <unistd.h>
 #include "patterns.h"
-
-#include "patterns.h"
+#include "patternsSeq.h"
 #include "debug.h"
 #include "unit.h"
 
@@ -116,7 +115,7 @@ void testScanSeq (void *src, size_t n, size_t size) {
 
 void testScan (void *src, size_t n, size_t size) {
     TYPE *dest = malloc (n * size);
-    scanS (dest, src, n, size, workerAdd);
+    scan (dest, src, n, size, workerAdd);
     printDouble (dest, n, __FUNCTION__);
     free (dest);
 }

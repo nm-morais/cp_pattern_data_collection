@@ -81,7 +81,7 @@ static void workerDivTwo(void* a, const void* b) {
 
 void testMapSeq (void *src, size_t n, size_t size) {
     TYPE *dest = malloc (n * size);
-    map (dest, src, n, size, workerAddOne);
+    mapSeq (dest, src, n, size, workerAddOne);
     printDouble (dest, n, __FUNCTION__);
     free (dest);
 }
@@ -95,7 +95,7 @@ void testMap (void *src, size_t n, size_t size) {
 
 void testReduceSeq (void *src, size_t n, size_t size) {
     TYPE *dest = malloc (size);
-    reduce (dest, src, n, size, workerAdd);
+    reduceSeq (dest, src, n, size, workerAdd);
     printDouble (dest, 1, __FUNCTION__);
     free (dest);
 }
@@ -109,14 +109,14 @@ void testReduce (void *src, size_t n, size_t size) {
 
 void testScanSeq (void *src, size_t n, size_t size) {
     TYPE *dest = malloc (n * size);
-    scan (dest, src, n, size, workerAdd);
+    scanSeq (dest, src, n, size, workerAdd);
     printDouble (dest, n, __FUNCTION__);
     free (dest);
 }
 
 void testScan (void *src, size_t n, size_t size) {
     TYPE *dest = malloc (n * size);
-    scan (dest, src, n, size, workerAdd);
+    scanS (dest, src, n, size, workerAdd);
     printDouble (dest, n, __FUNCTION__);
     free (dest);
 }
@@ -127,7 +127,7 @@ void testPackSeq (void *src, size_t n, size_t size) {
     int *filter = calloc(n,sizeof(*filter));
     for (int i = 0;  i < n;  i++)
         filter[i] = (i == 0 || i == n/2 || i == n-1);
-    int newN = pack (dest, src, n, size, filter);    
+    int newN = packSeq (dest, src, n, size, filter);    
     printInt (filter, n, "filter");    
     printDouble (dest, newN, __FUNCTION__);
     free(filter);
@@ -154,7 +154,7 @@ void testGatherSeq (void *src, size_t n, size_t size) {
     for (int i = 0;  i < nFilter;  i++)
         filter[i] = rand() % n;
     printInt (filter, nFilter, "filter");    
-    gather (dest, src, n, size, filter, nFilter);    
+    gatherSeq (dest, src, n, size, filter, nFilter);    
     printDouble (dest, nFilter, __FUNCTION__);
     free (dest);
 }
@@ -179,7 +179,7 @@ void testScatterSeq (void *src, size_t n, size_t size) {
     for (int i = 0;  i < n;  i++)
         filter[i] = rand() % nDest;
     printInt (filter, n, "filter");    
-    scatter (dest, src, n, size, filter);    
+    scatterSeq (dest, src, n, size, filter);    
     printDouble (dest, nDest, __FUNCTION__);
     free(filter);
     free (dest);
@@ -207,7 +207,7 @@ void testPipelineSeq (void *src, size_t n, size_t size) {
     };
     int nPipelineFunction = sizeof (pipelineFunction)/sizeof(pipelineFunction[0]);
     TYPE *dest = malloc (n * size);
-    pipeline (dest, src, n, size, pipelineFunction, nPipelineFunction);
+    pipelineSeq (dest, src, n, size, pipelineFunction, nPipelineFunction);
     printDouble (dest, n, __FUNCTION__);    
     free (dest);
 }
@@ -227,7 +227,7 @@ void testPipeline (void *src, size_t n, size_t size) {
 
 void testFarmSeq (void *src, size_t n, size_t size) {
     TYPE *dest = malloc (n * size);
-    farm (dest, src, n, size, workerAddOne, 3);
+    farmSeq (dest, src, n, size, workerAddOne, 3);
     printDouble (dest, n, __FUNCTION__);
     free (dest);
 }

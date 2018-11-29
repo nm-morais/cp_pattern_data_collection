@@ -14,6 +14,8 @@ it took lots of time to develop and be "presentable" for others to use, so if yo
 
 Nuno Morais, Marta Carlos, Luís Correia
 
+**you should prrof-read what i did, and verify everything**
+
 If you need to make changes, feel free to, or make a pull request and contribute!
 
 

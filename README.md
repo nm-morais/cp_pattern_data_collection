@@ -89,11 +89,11 @@ there will be a note in the end
     
   This means the computer you are working on doesn't have the requirements to run the python script, therefore you must copy the log file over to your computer and run in a computer with the requirements . use scp for this again:
 
-  $ scp \~/cp_pattern_data_collection gXX@LAB_IP:~/cp_pattern_data_collection/log
+  **$ scp \~/cp_pattern_data_collection gXX@LAB_IP:~/cp_pattern_data_collection/log**
 
   create a directory for the graphs and the csv's 
-  $ mkdir csv
-  $ mkdir graphs
+  **$ mkdir csv**
+  **$ mkdir graphs**
   
   if you care about the graphs: run the python script with the following argumments: 
   
@@ -104,7 +104,8 @@ there will be a note in the end
   **$ python3 parser.py arg1 arg2**
 
   if you dont: run the python script with 2 arguments randomly ,e.g.:
-    $ python3 parser.py -1 -1 
+  
+  **$ python3 parser.py -1 -1**
     and say N to the graph question
 
 **5 - Results:**

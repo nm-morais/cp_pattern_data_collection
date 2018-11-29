@@ -12,6 +12,8 @@ it took lots of time to develop and be "presentable" for others to use, so if yo
 
 Nuno Morais, Marta Carlos, Luís Correia
 
+If you need to make changes, feel free to, or make a pull request and contribute!
+
 # REQUIREMENTS: 
 
 CilkPlus
@@ -90,11 +92,11 @@ there will be a note in the end
   
   if you care about the graphs: run the python script with the following argumments: 
   
-  **data = [MAX SOURCE SIZE] / [INCREMENT]
+  **data = [MAX SOURCE SIZE] / [INCREMENT]**
   
-  **arg2 = [MAX WORKERS]
+  **arg2 = [MAX WORKERS]**
   
-  **$ python3 parser.py arg1 arg2
+  **$ python3 parser.py arg1 arg2**
 
   if you dont: run the python script with 2 arguments randomly ,e.g.:
     $ python3 parser.py -1 -1 

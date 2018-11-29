@@ -247,16 +247,16 @@ void testFarm (void *src, size_t n, size_t size) {
 typedef void (*TESTFUNCTION)(void *, size_t, size_t);
 
 TESTFUNCTION testFunction[] = {
-    testMapSeq,
     testMap,
-    testReduceSeq,
+    testMapSeq,
     testReduce,
-    testScanSeq,
+    testReduceSeq,
     testScan,
-    testPackSeq,
+    testScanSeq,
     testPack,
-    testGatherSeq,
+    testPackSeq,
     testGather,
+    testGatherSeq,
     testScatter,
     testScatterSeq,
     testPipeline,

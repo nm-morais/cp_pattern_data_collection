@@ -104,7 +104,8 @@ there will be a note in the end
   **$ python3 parser.py arg1 arg2**
 
   if you dont: run the python script with 2 arguments randomly ,e.g.:
-    $ python3 parser.py -1 -1 
+  
+  **$ python3 parser.py -1 -1**
     and say N to the graph question
 
 **5 - Results:**

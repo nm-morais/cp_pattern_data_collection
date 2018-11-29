@@ -4,11 +4,11 @@
 
 This is an automated data collection script, it contains:
 
-* 1 - A bash script to automate the execution of the program and save the output
+1. A bash script to automate the execution of the program and save the output
 
-* 2 - A python script to parse the data file
+1. A python script to parse the data file
 
-* 3 - A skeleton of the project where you should just drop your patterns.c and patterns
+1. A skeleton of the project where you should just drop your patterns.c and patterns
 
 it took lots of time to develop and be "presentable" for others to use, so if you used this tool in some way, please refer us in the report, we are g28, composed by:
 
@@ -19,13 +19,13 @@ If you need to make changes, feel free to, or make a pull request and contribute
 
 # REQUIREMENTS: 
 
-* CilkPlus
+1. CilkPlus
 
-* Python3 + matplotlib
+1. Python3 + matplotlib
 
-* Bash
+1. Bash
 
-* Around 30 MB of space for the graphs (depends on the size of the tests)
+1. Around 30 MB of space for the graphs (depends on the size of the tests)
 
 # INSTRUCTIONS
 
@@ -37,11 +37,11 @@ there will be a note in the end
 
 ## INSTRUCTIONS STEP-BY-STEP: 
 
-**1 - Change to home dir and clone the tool:**
+**0 - Change to home dir and clone the tool:**
 
   $ cd ~/ && git clone https://github.com/nm-morais/cp_pattern_data_collection.git
 
-**2 - change into cp_pattern_data_collection:**
+**1 - change into cp_pattern_data_collection:**
 
   $ cd cp_pattern_data_collection
   

@@ -82,7 +82,7 @@ int main(int argc, char* argv[]) {
         average_seq = average_seq / timesToRepeat;
         average_par = average_par / timesToRepeat;
 
-        speedup = (average_par / (average_seq * 1.0)); //force cast
+        speedup = (average_seq / (average_par * 1.0)); //force cast
         efficiency = speedup / (nWorkers * 1.0); //force cast
 
         printf("%s:\t%8ld\tmicroseconds\n", testNames[i], (long) (average_par));

@@ -89,8 +89,11 @@ there will be a note in the end
   $ mkdir graphs
   
   if you care about the graphs: run the python script with the following argumments: 
+  
   **data = [MAX SOURCE SIZE] / [INCREMENT]
+  
   **arg2 = [MAX WORKERS]
+  
   **$ python3 parser.py arg1 arg2
 
   if you dont: run the python script with 2 arguments randomly ,e.g.:

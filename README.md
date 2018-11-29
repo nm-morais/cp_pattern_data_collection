@@ -25,26 +25,26 @@ ssh into a computer with the requirements specified above,
 if the computer does not have python (like the LAB server)
 there will be a note in the end
 
-**1 - Change to home dir and clone the tool: 
+**1 - Change to home dir and clone the tool:**
 
   $ cd ~/ && git clone https://github.com/nm-morais/cp_pattern_data_collection.git
 
-**2 - change into cp_pattern_data_collection: 
+**2 - change into cp_pattern_data_collection:**
 
   $ cd cp_pattern_data_collection
   
-**2 - Copy your implementation of patterns.c into the src directory (cp_pattern_data_collection/src)
+**2 - Copy your implementation of patterns.c into the src directory (cp_pattern_data_collection/src)**
 
   For this you can use scp:
   $ scp  my_local_path_to_file/patterns.c  gXX@LAB_IP:~/cp_pattern_data_collection/src
   
-**3 - run the bash script  which calls the entire chain of tools (READ CAREFULLY):
+**3 - run the bash script  which calls the entire chain of tools (READ CAREFULLY):**
 
   BE RESPECTFULL, if you use this in the lab, beware of the load you will be inflicting on the server
   READ CAREFULLY:
   
   the arguments are:
-  **USAGE: start_tests.sh [MAX SOURCE SIZE] [INCREMENT] [MAX WORKERS] [TIMES TO AVERAGE]
+  **USAGE: start_tests.sh [MAX SOURCE SIZE] [INCREMENT] [MAX WORKERS] [TIMES TO AVERAGE]**
 
   **[MAX SOURCE SIZE]** : is the max size for the src array
 
@@ -69,9 +69,9 @@ there will be a note in the end
     import matplotlib.pyplot as plt
     ImportError: No module named 'matplotlib'
     
-  #This means the computer you are working on dont have the requirements to run the python script, therefore you must copy the log file over to your computer and run in a computer with the requirements . use scp for this again:
+  This means the computer you are working on doesn't have the requirements to run the python script, therefore you must copy the log file over to your computer and run in a computer with the requirements . use scp for this again:
 
-  $ scp ~/cp_pattern_data_collection gXX@LAB_IP:~/cp_pattern_data_collection/log
+  $ scp \~/cp_pattern_data_collection gXX@LAB_IP:~/cp_pattern_data_collection/log
 
   create a directory for the graphs and the csv's 
   $ mkdir csv

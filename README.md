@@ -5,14 +5,17 @@
 This is an automated data collection script, it contains:
 
 1 - A bash script to automate the execution of the program and save the output
+
 2 - A python script to parse the data file
+
 3 - A skeleton of the project where you should just drop your patterns.c and patterns
 
-it took lots of time to develop and be "presentable" for others to use, so if you used this tool in some way, please refer it in the report, we are g28, composed by:
+it took lots of time to develop and be "presentable" for others to use, so if you used this tool in some way, please refer us in the report, we are g28, composed by:
 
 Nuno Morais, Marta Carlos, Luís Correia
 
 If you need to make changes, feel free to, or make a pull request and contribute!
+
 
 # REQUIREMENTS: 
 
@@ -26,12 +29,13 @@ Around 30 MB of space for the graphs (depends on the size of the tests)
 
 # INSTRUCTIONS
 
-# PRE: 
+## PRE: 
+
 ssh into a computer with the requirements specified above, 
 if the computer does not have python (like the LAB server)
 there will be a note in the end
 
-# INSTRUCTIONS STEP-BY-STEP: 
+## INSTRUCTIONS STEP-BY-STEP: 
 
 **1 - Change to home dir and clone the tool:**
 
@@ -53,8 +57,9 @@ there will be a note in the end
   
 **3 - run the bash script  which calls the entire chain of tools (READ CAREFULLY):**
 
-  BE RESPECTFULL, if you use this in the lab, beware of the load you will be inflicting on the server
-  READ CAREFULLY:
+  **BE RESPECTFULL**, if you use this in the lab, beware of the load you will be inflicting on the server
+  
+  **READ CAREFULLY**:
   
   the arguments are:
   **USAGE: start_tests.sh [MAX SOURCE SIZE] [INCREMENT] [MAX WORKERS] [TIMES TO AVERAGE]**

@@ -64,7 +64,7 @@ there will be a note in the end
   **READ CAREFULLY**:
   
   the arguments are:
-  **USAGE: start_tests.sh [MAX SOURCE SIZE] [INCREMENT] [MAX WORKERS] [TIMES TO AVERAGE]**
+  **USAGE: start_tests.sh [MAX SOURCE SIZE] [SRC_INCREMENT] [MAX WORKERS] [WORKER_INCREMENT] [TIMES TO AVERAGE]"**
 
   **[MAX SOURCE SIZE]** : is the max size for the src array
 
@@ -72,6 +72,8 @@ there will be a note in the end
     e.g. source size of 10 and increment of 1 leads to 10 tests
 
   **[MAX WORKERS]** : the number of threads for cilk to test up to
+  
+  **[WORKER_INCREMENT]** _ works the same as the increment above, but for workers
 
   **[TIMES TO AVERAGE]** : the number of times to run the test and get an average of
     

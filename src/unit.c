@@ -267,6 +267,8 @@ TESTFUNCTION testFunction[] = {
     testScatterSeq,
     testPipeline,
     testPipelineSeq,
+    testPipelinePerProcessor,
+    testPipelineSeq,
     testFarm,
     testFarmSeq,
 };

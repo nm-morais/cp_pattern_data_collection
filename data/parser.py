@@ -132,14 +132,14 @@ def main():
 	print("Writing CSV's")
 	for pattern in patterns:
 		 with open("csv/" + pattern+ '.csv', 'w', newline='') as csvfile:
-		 	spamwriter = csv.writer(csvfile, delimiter=';',
+		 	spamwriter = csv.writer(csvfile, delimiter='|',
                             quotechar='|', quoting=csv.QUOTE_MINIMAL)
-	 		spamwriter.writerow(pattern["par_runtime"])
-	 		spamwriter.writerow(pattern["seq_runtime"])
-	 		spamwriter.writerow(pattern["src_size"])
-	 		spamwriter.writerow(pattern["nWorkers"])
-	 		spamwriter.writerow(pattern["speedup"])
-	 		spamwriter.writerow(pattern["efficiency"])
+	 		spamwriter.writerow(patterns[pattern]["par_runtime"])
+	 		spamwriter.writerow(patterns[pattern]["seq_runtime"])
+	 		spamwriter.writerow(patterns[pattern]["src_size"])
+	 		spamwriter.writerow(patterns[pattern]["nWorkers"])
+	 		spamwriter.writerow(patterns[pattern]["speedup"])
+	 		spamwriter.writerow(patterns[pattern]["efficiency"])
 	 		
 
 

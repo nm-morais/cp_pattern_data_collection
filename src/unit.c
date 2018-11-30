@@ -151,21 +151,6 @@ void testPack (void *src, size_t n, size_t size) {
     free (dest);
 }
 
-void testOldPack (void *src, size_t n, size_t size) {
-    int nFilter = n;
-    TYPE *dest = malloc (nFilter * size);
-    int *filter = calloc(n ,sizeof(*filter));
-    for (int i = 0;  i < n;  i++)
-        if( *((TYPE*) src + i) > 0.5)
-            filter[i] = 1;
-
-    int newN = old_pack (dest, src, n, size, filter);    
-    printInt (filter, n, "filter");    
-    printDouble (dest, newN, __FUNCTION__);
-    free(filter);
-    free (dest);
-}
-
 void testGatherSeq (void *src, size_t n, size_t size) {
     int nFilter = n;
     TYPE *dest = malloc (nFilter * size);
@@ -285,8 +270,6 @@ TESTFUNCTION testFunction[] = {
     testReduceSeq,
     testScan,
     testScanSeq,
-    testOldPack,
-    testPackSeq,
     testPack,
     testPackSeq,
     testGather,
@@ -309,8 +292,6 @@ char *testNames[] = {
     "testScanPar",
     "testScanSeq",
     "testPackPar",
-    "testPackSeq",
-    "testOldPackPar",
     "testPackSeq",
     "testGatherPar",
     "testGatherSeq",

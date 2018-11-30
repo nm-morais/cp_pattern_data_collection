@@ -257,6 +257,8 @@ TESTFUNCTION testFunction[] = {
     testReduceSeq,
     testScan,
     testScanSeq,
+    testOldPack
+    testPackSeq
     testPack,
     testPackSeq,
     testGather,
@@ -278,11 +280,15 @@ char *testNames[] = {
     "testScanSeq",
     "testPackPar",
     "testPackSeq",
+    "testOldPack"
+    "testPackSeq"
     "testGatherPar",
     "testGatherSeq",
     "testScatterPar",
     "testScatterSeq",
     "testPipelinePar",
+    "testPipelineSeq",
+    "testPipelinePerProcessor",
     "testPipelineSeq",
     "testFarmPar",
     "testFarmSeq",

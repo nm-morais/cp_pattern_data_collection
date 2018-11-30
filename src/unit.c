@@ -152,9 +152,9 @@ void testPack (void *src, size_t n, size_t size) {
 }
 
 void testGatherSeq (void *src, size_t n, size_t size) {
-    int nFilter = n;
+    int nFilter = n - 1;
     TYPE *dest = malloc (nFilter * size);
-    int filter[nFilter];
+    int *filter = malloc(nFilter * sizeof(int));
     for (int i = 0;  i < n;  i++)
         filter[i] = rand() % n;
     printInt (filter, nFilter, "filter");    
@@ -164,9 +164,9 @@ void testGatherSeq (void *src, size_t n, size_t size) {
 }
 
 void testGather (void *src, size_t n, size_t size) {
-    int nFilter = n;
+    int nFilter = n - 1;
     TYPE *dest = malloc (nFilter * size);
-    int filter[nFilter];
+    int* filter = malloc(nFilter * sizeof(int));
     for (int i = 0;  i < nFilter;  i++)
         filter[i] = rand() % n;
     printInt (filter, nFilter, "filter");    

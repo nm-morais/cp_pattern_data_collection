@@ -9,15 +9,19 @@ increment_size=$2
 #max workers, dont go crazy
 max_workers=$3
 
+#max worker increment until nWorkers = maxWorkers
+worker_increment=$4
+
 # times to run a pattern in order to extract an average
-times_to_average=$4
+times_to_average=$5
+
 
 if [[ "$#" -ne 4 ]]; then
     echo ""
     echo "INVALID USAGE"
-  	echo "USAGE: [MAX SOURCE SIZE] [INCREMENT] [MAX WORKERS] [TIMES TO AVERAGE]"
+    echo "USAGE: [MAX SOURCE SIZE] [SRC_INCREMENT] [MAX WORKERS] [WORKER_INCREMENT] [TIMES TO AVERAGE]"
     echo ""
-  	exit 1
+    exit 1
 fi
 
 rm data/log
@@ -33,16 +37,16 @@ echo "--------------STARTING TESTS--------------"
 curr_size=$increment_size;
 nWorkers=1
 while [[ $nWorkers -le $max_workers ]]; do
-	export CILK_NWORKERS=${nWorkers}
+  export CILK_NWORKERS=${nWorkers}
  
   while [[ $curr_size -le $max_src_size ]]; do
     echo "STARTING: ./main ${curr_size} ${nWorkers} ${times_to_average}"
     echo "NEW_TEST ${curr_size} ${nWorkers}" >> data/log
-  	./src/main $curr_size $nWorkers $times_to_average >> data/log
+    ./src/main $curr_size $nWorkers $times_to_average >> data/log
     ((curr_size=$curr_size+$increment_size))
-	done
+  done
   curr_size=$increment_size
-  ((nWorkers++))
+  ((nWorkers=$nWorkers+$worker_increment))
 done
 echo ""
 echo "DONE!"

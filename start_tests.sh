@@ -16,7 +16,7 @@ worker_increment=$4
 times_to_average=$5
 
 
-if [[ "$#" -ne 4 ]]; then
+if [[ "$#" -ne 5 ]]; then
     echo ""
     echo "INVALID USAGE"
     echo "USAGE: [MAX SOURCE SIZE] [SRC_INCREMENT] [MAX WORKERS] [WORKER_INCREMENT] [TIMES TO AVERAGE]"
@@ -35,7 +35,7 @@ echo ""
 echo "--------------STARTING TESTS--------------"
 
 curr_size=$increment_size;
-nWorkers=1
+nWorkers=$worker_increment;
 while [[ $nWorkers -le $max_workers ]]; do
   export CILK_NWORKERS=${nWorkers}
  

@@ -51,7 +51,8 @@ done
 echo ""
 echo "DONE!"
 
-aux=$((max_src_size / increment_size))
+nr_tests_src=$((max_src_size / increment_size))
+nr_tests_worker=$((max_workers / worker_increment))
 
 echo ""
 echo "PARSING AND MAKING GRAPHS"
@@ -61,7 +62,7 @@ rm data/graphs/* &> /dev/null
 rm data/csv/* &> /dev/null
 mkdir data/graphs &> /dev/null
 mkdir data/csv &> /dev/null
-python3 data/parser.py $aux $max_workers
+python3 data/parser.py $nr_tests_src $nr_tests_worker
 
 echo ""
 echo "DONE"

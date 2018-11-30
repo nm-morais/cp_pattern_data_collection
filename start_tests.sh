@@ -57,7 +57,7 @@ nr_tests_worker=$((max_workers / worker_increment))
 echo ""
 echo "PARSING AND MAKING GRAPHS"
 echo ""
-echo "Starting : data/parser.py ${aux} ${max_workers}" 
+echo "Starting : data/parser.py ${nr_tests_src} ${nr_tests_worker}" 
 rm data/graphs/* &> /dev/null
 rm data/csv/* &> /dev/null
 mkdir data/graphs &> /dev/null

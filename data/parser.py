@@ -106,27 +106,29 @@ def main():
 
 
 
-		print("Making Runtime over Source Data Size")
+		print("Plotting Runtime over Source Data Size for each Pattern")
 		for pattern in patterns:
 			for current_workerNr in range(0 , nr_tests_worker_size):
+				nWorkers = patterns[pattern]["nWorkers"][current_workerNr * (nr_tests_src_size)]
 				seq_runtime_values = patterns[pattern]["seq_runtime"][current_workerNr * (nr_tests_src_size): nr_tests_src_size * current_workerNr + nr_tests_src_size]
 				par_runtime_values = patterns[pattern]["par_runtime"][current_workerNr * (nr_tests_src_size): nr_tests_src_size * current_workerNr + nr_tests_src_size]
 				src_sizes = patterns[pattern]["src_size"][current_workerNr * (nr_tests_src_size): nr_tests_src_size * current_workerNr + nr_tests_src_size]
 				makeRuntimeGraph(seq_runtime_values , par_runtime_values , src_sizes, 
-								(pattern) + " pattern Runtime over Data size with number of Workers = "+ str(current_workerNr + 1),
+								(pattern) + " pattern Runtime over Data size with number of Workers = "+ str(nWorkers),
 								"Runtime in microseconds" , "Size of the data")
 
-		print("Making efficiency and Speedup graphs\n")
+		print("Making efficiency and Speedup graphs for each Pattern\n")
 		#plotting Efficiency and Speedup over data size for each pattern for each thread number
 		for pattern in patterns:
 			for current_workerNr in range(0 , nr_tests_worker_size):
+				nWorkers = patterns[pattern]["nWorkers"][current_workerNr * (nr_tests_src_size)]
 				efficiency_values = patterns[pattern]["efficiency"][current_workerNr * (nr_tests_src_size): nr_tests_src_size * current_workerNr + nr_tests_src_size]
 				speedup_values = patterns[pattern]["speedup"][current_workerNr * (nr_tests_src_size): nr_tests_src_size * current_workerNr + nr_tests_src_size]
 				src_sizes = patterns[pattern]["src_size"][current_workerNr * (nr_tests_src_size): nr_tests_src_size * current_workerNr + nr_tests_src_size]
 				
 
 				makeRuntimeEfficiencyGraph(efficiency_values , speedup_values , src_sizes, 
-								(pattern) + " pattern Speedup and Efficiency over Data size with number of Workers = "+ str(current_workerNr + 1),
+								(pattern) + " pattern Speedup and Efficiency over Data size with number of Workers = "+ str(nWorkers),
 								"" , "")
 
 	print("Writing CSV's")

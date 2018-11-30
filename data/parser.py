@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-import matplotlib.pyplot as plt
 import csv
 import sys
 
@@ -100,11 +99,10 @@ def main():
 		opt = input("Do you wish to make the graphs automatically?	[Y/N]\n")
 
 	if(opt == "Y" or opt == "y" ):
+
 		seq_runtime_values = []
 		par_runtime_values = []
 		data_size_values = []
-
-
 
 		print("Plotting Runtime over Source Data Size for each Pattern")
 		for pattern in patterns:
@@ -154,6 +152,9 @@ def main():
 
 
 def makeRuntimeGraph(seq_runtime, par_runtime, src_sizes ,title , x_plot_label, y_plot_labels):
+    
+	import matplotlib.pyplot as plt
+
     plt.figure(figsize=(8, 8), frameon=False)
 
 
@@ -168,6 +169,9 @@ def makeRuntimeGraph(seq_runtime, par_runtime, src_sizes ,title , x_plot_label, 
     plt.close()
 
 def makeRuntimeEfficiencyGraph(efficiency_values, speedup_values, src_sizes ,title , x_plot_label, y_plot_labels):
+    
+	import matplotlib.pyplot as plt
+	
     plt.figure(figsize=(8, 8), frameon=False)
 
 

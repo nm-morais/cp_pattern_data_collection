@@ -152,8 +152,7 @@ def main():
 
 
 def makeRuntimeGraph(seq_runtime, par_runtime, src_sizes ,title , x_plot_label, y_plot_labels):
-    
-	import matplotlib.pyplot as plt
+    import matplotlib.pyplot as plt
 
     plt.figure(figsize=(8, 8), frameon=False)
 
@@ -169,9 +168,8 @@ def makeRuntimeGraph(seq_runtime, par_runtime, src_sizes ,title , x_plot_label, 
     plt.close()
 
 def makeRuntimeEfficiencyGraph(efficiency_values, speedup_values, src_sizes ,title , x_plot_label, y_plot_labels):
-    
-	import matplotlib.pyplot as plt
-	
+    import matplotlib.pyplot as plt
+
     plt.figure(figsize=(8, 8), frameon=False)
 
 

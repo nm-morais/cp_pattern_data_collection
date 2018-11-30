@@ -151,6 +151,21 @@ void testPack (void *src, size_t n, size_t size) {
     free (dest);
 }
 
+void testOldPack (void *src, size_t n, size_t size) {
+    int nFilter = n;
+    TYPE *dest = malloc (nFilter * size);
+    int *filter = calloc(n ,sizeof(*filter));
+    for (int i = 0;  i < n;  i++)
+        if( *((TYPE*) src + i) > 0.5)
+            filter[i] = 1;
+
+    int newN = old_pack (dest, src, n, size, filter);    
+    printInt (filter, n, "filter");    
+    printDouble (dest, newN, __FUNCTION__);
+    free(filter);
+    free (dest);
+}
+
 void testGatherSeq (void *src, size_t n, size_t size) {
     int nFilter = n;
     TYPE *dest = malloc (nFilter * size);
@@ -225,6 +240,19 @@ void testPipeline (void *src, size_t n, size_t size) {
     int nPipelineFunction = sizeof (pipelineFunction)/sizeof(pipelineFunction[0]);
     TYPE *dest = malloc (n * size);
     pipeline (dest, src, n, size, pipelineFunction, nPipelineFunction);
+    printDouble (dest, n, __FUNCTION__);    
+    free (dest);
+}
+
+void testPipelinePerProcessor (void *src, size_t n, size_t size) {
+    void (*pipelineFunction[])(void*, const void*) = {
+        workerMultTwo,
+        workerAddOne,
+        workerDivTwo
+    };
+    int nPipelineFunction = sizeof (pipelineFunction)/sizeof(pipelineFunction[0]);
+    TYPE *dest = malloc (n * size);
+    pipelinePerProcessor (dest, src, n, size, pipelineFunction, nPipelineFunction);
     printDouble (dest, n, __FUNCTION__);    
     free (dest);
 }

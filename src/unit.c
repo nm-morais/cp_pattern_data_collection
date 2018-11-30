@@ -36,6 +36,8 @@ static void workerMin(void* a, const void* b, const void* c) {
 //if the two values to add are null, workerADD returns 0
 static void workerAdd(void* a, const void* b, const void* c) {
 
+    for(int i = 0 ; i < 200; i++);;
+
     if(b == NULL && c == NULL)
          memset(a, 0 , sizeof(TYPE));
     else {
@@ -121,11 +123,12 @@ void testScan (void *src, size_t n, size_t size) {
 }
 
 void testPackSeq (void *src, size_t n, size_t size) {
-    int nFilter = 3;
+    int nFilter = n;
     TYPE *dest = malloc (nFilter * size);
     int *filter = calloc(n,sizeof(*filter));
     for (int i = 0;  i < n;  i++)
-        filter[i] = (i == 0 || i == n/2 || i == n-1);
+        if( *((TYPE*) src + i) > 0.5)
+            filter[i] = 1;
     int newN = packSeq (dest, src, n, size, filter);    
     printInt (filter, n, "filter");    
     printDouble (dest, newN, __FUNCTION__);
@@ -134,11 +137,13 @@ void testPackSeq (void *src, size_t n, size_t size) {
 }
 
 void testPack (void *src, size_t n, size_t size) {
-    int nFilter = 3;
+    int nFilter = n;
     TYPE *dest = malloc (nFilter * size);
-    int *filter = calloc(n,sizeof(*filter));
+    int *filter = calloc(n ,sizeof(*filter));
     for (int i = 0;  i < n;  i++)
-        filter[i] = (i == 0 || i == n/2 || i == n-1);
+        if( *((TYPE*) src + i) > 0.5)
+            filter[i] = 1;
+
     int newN = pack (dest, src, n, size, filter);    
     printInt (filter, n, "filter");    
     printDouble (dest, newN, __FUNCTION__);
@@ -147,10 +152,10 @@ void testPack (void *src, size_t n, size_t size) {
 }
 
 void testGatherSeq (void *src, size_t n, size_t size) {
-    int nFilter = 3;
+    int nFilter = n;
     TYPE *dest = malloc (nFilter * size);
     int filter[nFilter];
-    for (int i = 0;  i < nFilter;  i++)
+    for (int i = 0;  i < n;  i++)
         filter[i] = rand() % n;
     printInt (filter, nFilter, "filter");    
     gatherSeq (dest, src, n, size, filter, nFilter);    
@@ -159,7 +164,7 @@ void testGatherSeq (void *src, size_t n, size_t size) {
 }
 
 void testGather (void *src, size_t n, size_t size) {
-    int nFilter = 3;
+    int nFilter = n;
     TYPE *dest = malloc (nFilter * size);
     int filter[nFilter];
     for (int i = 0;  i < nFilter;  i++)
@@ -171,7 +176,7 @@ void testGather (void *src, size_t n, size_t size) {
 }
 
 void testScatterSeq (void *src, size_t n, size_t size) {
-    int nDest = 6;
+    int nDest = 2 * n;
     TYPE *dest = malloc (nDest * size);
     memset (dest, 0, nDest * size);
     int *filter = calloc(n,sizeof(*filter));
@@ -185,7 +190,7 @@ void testScatterSeq (void *src, size_t n, size_t size) {
 }
 
 void testScatter (void *src, size_t n, size_t size) {
-    int nDest = 6;
+    int nDest = 2 * n;
     TYPE *dest = malloc (nDest * size);
     memset (dest, 0, nDest * size);
     int *filter = calloc(n,sizeof(*filter));

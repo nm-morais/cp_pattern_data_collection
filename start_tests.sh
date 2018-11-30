@@ -62,7 +62,9 @@ rm data/graphs/* &> /dev/null
 rm data/csv/* &> /dev/null
 mkdir data/graphs &> /dev/null
 mkdir data/csv &> /dev/null
-python3 data/parser.py $nr_tests_src $nr_tests_worker
+
+cd data
+python3 parser.py $nr_tests_src $nr_tests_worker
 
 echo ""
 echo "DONE"

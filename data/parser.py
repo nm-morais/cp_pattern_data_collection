@@ -134,12 +134,12 @@ def main():
 		 with open("csv/" + pattern+ '.csv', 'w', newline='') as csvfile:
 		 	spamwriter = csv.writer(csvfile, delimiter=';',
                             quotechar='|', quoting=csv.QUOTE_MINIMAL)
-	 		spamwriter.writerow(target_pattern["par_runtime"])
-	 		spamwriter.writerow(target_pattern["seq_runtime"])
-	 		spamwriter.writerow(target_pattern["src_size"])
-	 		spamwriter.writerow(target_pattern["nWorkers"])
-	 		spamwriter.writerow(target_pattern["speedup"])
-	 		spamwriter.writerow(target_pattern["efficiency"])
+	 		spamwriter.writerow(pattern["par_runtime"])
+	 		spamwriter.writerow(pattern["seq_runtime"])
+	 		spamwriter.writerow(pattern["src_size"])
+	 		spamwriter.writerow(pattern["nWorkers"])
+	 		spamwriter.writerow(pattern["speedup"])
+	 		spamwriter.writerow(pattern["efficiency"])
 	 		
 
 

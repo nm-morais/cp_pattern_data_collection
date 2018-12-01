@@ -229,19 +229,6 @@ void testPipeline (void *src, size_t n, size_t size) {
     free (dest);
 }
 
-void testPipelinePerProcessor (void *src, size_t n, size_t size) {
-    void (*pipelineFunction[])(void*, const void*) = {
-        workerMultTwo,
-        workerAddOne,
-        workerDivTwo
-    };
-    int nPipelineFunction = sizeof (pipelineFunction)/sizeof(pipelineFunction[0]);
-    TYPE *dest = malloc (n * size);
-    pipelinePerProcessor (dest, src, n, size, pipelineFunction, nPipelineFunction);
-    printDouble (dest, n, __FUNCTION__);    
-    free (dest);
-}
-
 void testFarmSeq (void *src, size_t n, size_t size) {
     TYPE *dest = malloc (n * size);
     farmSeq (dest, src, n, size, workerAddOne, 3);
@@ -278,8 +265,6 @@ TESTFUNCTION testFunction[] = {
     testScatterSeq,
     testPipeline,
     testPipelineSeq,
-    testPipelinePerProcessor,
-    testPipelineSeq,
     testFarm,
     testFarmSeq,
 };
@@ -298,8 +283,6 @@ char *testNames[] = {
     "testScatterPar",
     "testScatterSeq",
     "testPipelinePar",
-    "testPipelineSeq",
-    "testPipelinePerProcessorPar",
     "testPipelineSeq",
     "testFarmPar",
     "testFarmSeq",
